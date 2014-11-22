@@ -80,6 +80,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.config.js" />
+    <Content Include="app\app.module.js" />
     <Content Include="bower.json" />
     <Content Include="bower_components\angular\.bower.json" />
     <Content Include="bower_components\angular\angular.min.js.gzip" />
@@ -87,6 +89,7 @@
     <Content Include="bower_components\angular\bower.json" />
     <Content Include="bower_components\angular\package.json" />
     <Content Include="bower_components\angular\README.md" />
+    <Content Include="app\controllers\homePage.controller.js" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -113,6 +116,7 @@
       <Name>InstaSharp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

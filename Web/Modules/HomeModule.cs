@@ -20,10 +20,17 @@ namespace Blinnikov.LikeMeUp.Web.Modules {
         public HomeModule() {
             config = this.CreateConfig();
             this.Get["/", true] = this.HomeView();
+            this.Get["/inst", true] = this.Instagram();
             this.Get["/authdone", true] = this.AuthDone();
         }
 
         private Func<dynamic, CancellationToken, Task<dynamic>> HomeView() {
+            return async (_, token) => {
+                return this.View["index"];
+            };
+        }
+
+        private Func<dynamic, CancellationToken, Task<dynamic>> Instagram() {
             return async (_, token) => {
                 var oauthResponse = this.GetResponseFromSession();
                 if (oauthResponse != null) {
@@ -50,7 +57,7 @@ namespace Blinnikov.LikeMeUp.Web.Modules {
             ////var users = new InstaSharp.Endpoints.Users(config, oauthResponse);
             ////users.EnableEnforceSignedHeader(LocalhostIp);
             ////var feed = await users.GetSelf();
-            return this.View["index"];
+            return this.HomeView();
         }
 
         private Func<dynamic, CancellationToken, Task<dynamic>> AuthDone() {
